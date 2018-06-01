@@ -24,12 +24,12 @@
     </dependency>
   </dependencies>
   <modules>
-    <module>jedis</module>
-    <module>druid</module>
-    <module>mybatis</module>
-    <module>shiro</module>
-    <module>dubbo-api</module>
-    <module>dubbo-provide</module>
-    <module>dubbo-consume</module>
+  	<module>jedis</module>
+  	<module>druid</module>
+  	<module>mybatis</module>
+  	<module>shiro</module>
+  	<module>dubbo-api</module>
+  	<module>dubbo-provide</module>
+  	<module>dubbo-consume</module>
   </modules>
 </project>
