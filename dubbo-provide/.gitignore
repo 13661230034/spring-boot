@@ -1,0 +1,17 @@
+# IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea/
+out/
+target/
+
+#eclipse
+.project
+.settings/
+.classpath
+
+
+# node
+node/
+node_modules/
