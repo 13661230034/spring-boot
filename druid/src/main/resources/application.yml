@@ -1,2 +1,73 @@
-server:
-  port: 80
+server:  
+    # 设定http监听端口
+    port: 80
+    tomcat:
+      uri-encoding: UTF-8
+
+spring: 
+    # HTTP ENCODING  
+    http:  
+        encoding.charset: UTF-8  
+        encoding.enable: true  
+        encoding.force: true  
+    
+    #数据源
+    datasource:
+        # 配置这个属性的意义在于，如果存在多个数据源，监控的时候可以通过名字来区分开来。 
+#        name: test
+        # 使用druid数据源
+        type: com.alibaba.druid.pool.DruidDataSource
+        # 根据url自动识别
+        driver-class-name: com.mysql.jdbc.Driver
+        # 连接数据库的url
+        url: jdbc:mysql://112.74.219.81:3306/shiro?useUnicode=true&characterEncoding=utf-8
+        
+        # 连接数据库的用户名
+        username: root
+        
+        # 连接数据库的密码
+        # 如果你不希望密码直接写在配置文件中 去下方链接学习修改
+        # https://github.com/alibaba/druid/wiki/%E4%BD%BF%E7%94%A8ConfigFilter
+        password: root
+        
+        # 配置初始化大小、最小、最大
+        # 初始化时建立物理连接的个数
+        initialSize: 5
+        # 最小连接池数量
+        minIdle: 5
+        # 最大连接池数量
+        maxActive: 20
+        
+        # 获取连接时最大等待时间
+        maxWait: 60000
+        
+        # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 
+        timeBetweenEvictionRunsMillis: 60000
+        # 配置一个连接在池中最小生存的时间，单位是毫秒 
+        minEvictableIdleTimeMillis: 300000
+        
+        # 用来检测连接是否有效的sql
+        validationQuery: SELECT 1 FROM t_user
+        
+        # 建议配置为true，不影响性能，并且保证安全性。
+        testWhileIdle: true
+        # 申请连接时执行validationQuery检测连接是否有效，
+        # 缺点:配置会降低性能 ，建议关闭
+        testOnBorrow: false
+        # 归还连接时执行validationQuery检测连接是否有效
+        # 缺点:配置会降低性能，建议关闭
+        testOnReturn: false
+        
+        # 打开PSCache，并且指定每个连接上PSCache的大小
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
+        
+        # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+        filters: stat,wall,log4j
+        
+        # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+        connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+       
+        # 合并多个DruidDataSource的监控数据
+        useGlobalDataSourceStat: true
+        
