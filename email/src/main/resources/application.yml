@@ -4,4 +4,16 @@ server:
     tomcat:
       uri-encoding: UTF-8
   
-  
+  #授权码：qpxkqnhrkerpdbgh
+spring:
+  #####qq邮箱#####
+  mail:
+    #QQ邮件服务地址
+    host: smtp.qq.com
+    #用户名
+    username: 2072218079@qq.com
+    #密碼
+    password: qpxkqnhrkerpdbgh
+    #默认编码
+    default-encoding: UTF-8
+    
