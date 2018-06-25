@@ -1,0 +1,7 @@
+server:  
+    # 设定http监听端口
+    port: 80
+    tomcat:
+      uri-encoding: UTF-8
+  
+  
