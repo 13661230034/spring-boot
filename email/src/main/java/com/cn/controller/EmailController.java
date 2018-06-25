@@ -1,12 +1,14 @@
 package com.cn.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cn.service.impl.EmailServiceImp;
-
-@RestController
+@Component
+//@RestController
 public class EmailController {
 
 	@Autowired
@@ -15,15 +17,16 @@ public class EmailController {
 	private String to = "13661230034@163.com";
 
 	/**
-	 * 邮件发送方法
-	 * @param to 收件人邮箱地址
-	 * @param title 头部
-	 * @param content 内容
-	 * @return
+	 * 邮件发送方法<br/>
+	 * @param to 收件人邮箱地址<br/>
+	 * @param title 头部<br/>
+	 * @param content 内容<br/>
+	 * @return<br/>
 	 */
-	@RequestMapping("/")
-	public String EmailTest(String to, String title, String content) {
-		emailService.sendSimple(to, title, content);
+	@Scheduled(cron = "0/10 * * * * ?")
+//	@RequestMapping("/")
+	public String EmailTest() {
+		emailService.sendSimple(to, "下班打卡", "重要事情说三遍、下班打卡、下班打卡、下班打卡");
 		return "SUCCESS";
 	}
 
