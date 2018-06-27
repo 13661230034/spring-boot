@@ -35,6 +35,15 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- 热部署 配置idea的Compiler ctrl+shift+alt+/ 选择Registry 勾选 Compler autoMake 
+			alow when app running -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
 		<!-- 单元测试 -->
 		<dependency>
 			<groupId>junit</groupId>
