@@ -70,5 +70,6 @@
 		<module>dubbo-provide</module>
 		<module>dubbo-consume</module>
 		<module>email</module>
+		<module>WeChat-Pay</module>
 	</modules>
 </project>
