@@ -9,7 +9,7 @@ mybatis:
   # 扫描路径
   mapperLocations: classpath:mapper/*.xml
  
- 
+
 # Jedis 
 jedis: 
   max.total: 100
